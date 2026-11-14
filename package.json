@@ -1,0 +1,36 @@
+{
+  "name": "asistencia-qr",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "SIAE · Sistema de asistencia escolar con código QR",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "init": "node scripts/init.mjs",
+    "build": "node scripts/build.mjs",
+    "start": "node --disable-warning=ExperimentalWarning server/index.mjs",
+    "typecheck": "tsc --noEmit -p web",
+    "test": "node --disable-warning=ExperimentalWarning --test \"test/*.test.mjs\"",
+    "create-admin": "node --disable-warning=ExperimentalWarning scripts/create-admin.mjs",
+    "backup": "node --disable-warning=ExperimentalWarning scripts/backup.mjs",
+    "dev": "npm run build && npm start",
+    "test:remote": "node --disable-warning=ExperimentalWarning --import ./test/remote-env.mjs --test \"test/*.test.mjs\"",
+    "test:all": "npm test && npm run test:remote"
+  },
+  "dependencies": {
+    "jsqr": "^1.4.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "esbuild": "^0.28.2",
+    "typescript": "^6.0.3"
+  },
+  "optionalDependencies": {
+    "@libsql/client": "^0.15.0"
+  }
+}

@@ -1,0 +1,9 @@
+# Archivos que no hacen falta en Vercel
+data/
+backups/
+.env
+docs/
+test/
+*.bat
+node_modules/
+dist/
